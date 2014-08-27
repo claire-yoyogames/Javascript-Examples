@@ -37,12 +37,7 @@ var buttonControlFuncs = (function() {
 
     reset: function() {
       player.reset();
-
-      var numEnemies = enemies.length;
-      for(var i = 0; i < numEnemies; i++)
-      {
-        enemies[i].reset();
-      }
+      enemyInfo.reset();
 
       if (update === null && gameRunning)
       {

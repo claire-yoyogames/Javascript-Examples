@@ -50,18 +50,8 @@ var player = new Character(100, 100, 1, 64);
 
 var enemyInfo = (function() {
   var enemyList = [];
-  
+ 
   return {
-    onReceiveEnemyInfo: function(enemyDataObject) {
-      //var enemyDataObject = JSON.parse(enemyData);
-      var numEnemies = enemyDataObject.enemyList.length;
-
-      for (var i = 0; i < numEnemies; i++)
-      {
-        enemyList[i] = new Enemy(enemyDataObject.enemyList[i]);
-      }  
-    },
-
     initialise: function() {
       var xmlhttp = new XMLHttpRequest();
       var url = "Assets/enemies.txt";
@@ -69,13 +59,26 @@ var enemyInfo = (function() {
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
         {
-          var myArr = JSON.parse(xmlhttp.responseText);
-          enemyInfo.onReceiveEnemyInfo(myArr);
-        }
+          var enemyDataObject = JSON.parse(xmlhttp.responseText);
+          var numEnemies = enemyDataObject.enemyList.length;
+
+          for (var i = 0; i < numEnemies; i++)
+          {
+            enemyList[i] = new Enemy(enemyDataObject.enemyList[i]);
+          }
+        }  
       }
 
       xmlhttp.open("GET", url, true);
       xmlhttp.send();
+    },
+
+    reset: function() {
+      var numEnemies = enemyList.length;
+      for(var i = 0; i < numEnemies; i++)
+      {
+        enemyList[i].reset();
+      }
     },
 
     update: function() {
