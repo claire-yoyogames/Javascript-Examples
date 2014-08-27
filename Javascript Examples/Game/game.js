@@ -71,10 +71,10 @@ function drawCharacter(character) {
   } 
 
   var img = document.getElementById("Face");
-  var cropY = selected ? img.height * 0.5 : 0;
+  var cropX = selected ? img.width * 0.5 : 0;
 
   recolourCtx.clearRect(0, 0, recolour.width, recolour.height);
-  recolourCtx.drawImage(img, 0, cropY, img.width, img.height * 0.5, 0, 0, recolour.width, recolour.height);
+  recolourCtx.drawImage(img, cropX, 0, img.width * 0.5, img.height, 0, 0, recolour.width, recolour.height);
 
   if(selected)
   {
