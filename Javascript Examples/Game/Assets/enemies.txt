@@ -1,0 +1,9 @@
+{
+	"enemyList": [
+  		{ "posX":50, "posY":50, "speed":2, "size":64 },
+   		{ "posX":50, "posY":150, "speed":3, "size":96 },
+  		{ "posX":50, "posY":300, "speed":4, "size":96 },
+  		{ "posX":50, "posY":450, "speed":5, "size":64 },
+  		{ "posX":50, "posY":550, "speed":6, "size":32 }
+	] 
+}

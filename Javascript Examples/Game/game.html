@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <button type="button" style="color:red;" onclick="buttonControlFuncs.startUpdate();" onmouseover="buttonHighlight(this);" onmouseout="buttonUnhighlight(this);">Start</button>
+      <br>
+    </head>
+
+    <body>
+    </body>
+
+    <canvas id="myCanvas" width="800" height="600" style="border:1px solid #000000;position:a">
+    </canvas> <br>
+
+    <body>
+      <script type="text/javascript" src="characters.js"></script>
+      <script type="text/javascript" src="game.js"></script>
+      <script type="text/javascript" src="button.js"></script>
+      <script type="text/javascript" src="input.js"></script>
+      <img id="Face" src="Assets/face_atlas.png" style="display: none;">
+      <button type="button" style="color:red;" onclick="buttonControlFuncs.reset();" onmouseover="buttonHighlight(this);" onmouseout="buttonUnhighlight(this);">Reset</button>
+      <button type="button" style="color:red;" onclick="buttonControlFuncs.stopUpdate();" onmouseover="buttonHighlight(this);" onmouseout="buttonUnhighlight(this);">Pause</button>
+      <button type="button" style="color:red;" onclick="buttonControlFuncs.clearHighScore();" onmouseover="buttonHighlight(this);" onmouseout="buttonUnhighlight(this);">Clear High Score</button>
+      <audio id="Bounce" src="Assets/bounce.mp3" > </audio>
+    </body>
+
+
+  </html>
